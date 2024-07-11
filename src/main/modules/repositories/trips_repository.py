@@ -28,7 +28,7 @@ class TripsRepository:
     cursor.execute(
       ''' SELECT * FROM trips WHERE id = ? ''', (trip_id,)
     )
-    trip = cursor.fetchall()
+    trip = cursor.fetchone()
     return trip
   
   def update_trip_status(self, trip_id: str) -> None:
